@@ -9,25 +9,36 @@
 }
 
 /* FONTS */
+
 @font-face {
   font-family: 'Livvic';
-  src: url('../font/livvic/Livvic-Bold.woff2') format('woff2'),
-      url('../font/livvic/Livvic-Bold.woff') format('woff');
+  src: url('../font/Livvic-Bold.woff2') format('woff2'),
+      url('../font/Livvic-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Livvic';
-  src: url('../font/livvic/Livvic-Medium.woff2') format('woff2'),
-      url('../font/livvic/Livvic-Medium.woff') format('woff');
+  src: url('../font/Livvic-Medium.woff2') format('woff2'),
+      url('../font/Livvic-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Livvic';
-  src: url('../font/livvic/Livvic-SemiBold.woff2') format('woff2'),
-      url('../font/livvic/Livvic-SemiBold.woff') format('woff');
+  src: url('../font/Livvic-SemiBold.woff2') format('woff2'),
+      url('../font/Livvic-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* GENERAL */
+
+/* GEN415pxERAL */
 html {
   box-sizing: border-box;
   height: 100%;
@@ -45,9 +56,9 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Livvic', "Arial", sans-serif;
+  font-family: var(--site-font);
   font-style: normal;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 15px;
   line-height: 25px;
   background-color: #fff;
@@ -94,6 +105,14 @@ img {
   line-height: 28px;
 }
 
+.site-header__logo {
+  transition: opacity 0.3s ease;
+}
+
+.site-header__logo:hover {
+  opacity: 0.7;
+}
+
 .site-header__logo-img {
   display: block;
 }
@@ -130,10 +149,156 @@ img {
   transition: border-color 0.3s ease,
   color 0.3s ease,
   background-color 0.3s ease;
+  font-weight: bold;
 }
 
 .site-header__link:hover {
   border-color: var(--first-special-color);
   color: var(--first-special-color);
   background-color: #fff;
+}
+
+/* SITE HERO */
+
+.site-hero {
+  padding-top: 56px;
+  padding-bottom: 255px;
+  background-color: var(--hero--bottom-section-bg);
+  background-image: url(../img/icon/hero-center-bg.svg),
+  url(../img/icon/hero-bottom-bg.svg);
+  background-repeat: no-repeat;
+  background-position: calc(50% + -685px) calc(50% - 105px),
+  calc(50% - -390px) calc(50% - -259px);
+}
+
+.site-hero__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.site-hero__title {
+  width: 530px;
+}
+
+.site-hero__heading {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+}
+
+.site-hero__heading span {
+  color: var(--first-special-color);
+}
+
+.site-hero__content::before {
+  display: block;
+  margin-bottom: 79px;
+  width: 50px;
+  height: 4px;
+  content: "";
+  background-color: var(--second-special-color);
+}
+
+.site-hero__text {
+  margin: 0;
+  padding: 0;
+  width: 415px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* FEATURE */
+
+.feature {
+  padding-top: 198px;
+  padding-bottom: 140px;
+  background-color: var(--center--footer-bg);
+  background-image: url(../img/icon/features-bg.svg);
+  background-repeat: no-repeat;
+  background-position: right calc(50% - 676px) bottom calc(80% + -378px);
+}
+
+.feature__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature__title {
+  position: relative;
+  width: 445px;
+}
+
+.feature__title::before {
+  position: absolute;
+  display: block;
+  top: -54px;
+  left: 0;
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: var(--first-special-color);
+}
+
+.feature__heading {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.feature__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature__item {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.feature__item::before {
+  display: block;
+  margin-right: 23px;
+  content: "";
+  width: 72px;
+  height: 72px;
+  background-repeat: no-repeat;
+}
+
+.feature__item:nth-child(1)::before {
+  background-image: url(../img/icon/experianced.svg);
+}
+
+.feature__item:nth-child(2)::before {
+  background-image: url(../img/icon/easy.svg);
+}
+
+.feature__item:nth-child(3)::before {
+  background-image: url(../img/icon/enganced.svg);
+}
+
+.feature__item-link {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  text-decoration: none;
+  color: var(--first-special-color);
+  transition: opacity 0.3s ease;
+}
+
+.feature__item-link:hover {
+  opacity: 0.7;
+}
+
+.feature__item-desc {
+  margin: 0;
+  padding: 0;
+  width: 445px;
 }
