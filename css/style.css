@@ -1,3 +1,32 @@
+/* ROOT */
+:root {
+  --hero--bottom-section-bg: #014E56;
+  --center--footer-bg: #012F34;
+  --second-special-color: #79C8C7;
+  --first-special-color: #F67E7E;
+  /* FONT */
+  --site-font: 'Livvic', "Arial", sans-serif;
+}
+
+/* FONTS */
+@font-face {
+  font-family: 'Livvic';
+  src: url('../font/livvic/Livvic-Bold.woff2') format('woff2'),
+      url('../font/livvic/Livvic-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('../font/livvic/Livvic-Medium.woff2') format('woff2'),
+      url('../font/livvic/Livvic-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('../font/livvic/Livvic-SemiBold.woff2') format('woff2'),
+      url('../font/livvic/Livvic-SemiBold.woff') format('woff');
+}
+
 /* GENERAL */
 html {
   box-sizing: border-box;
@@ -16,9 +45,13 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: 'Livvic', "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 25px;
   background-color: #fff;
-  color: #222;
+  color: #fff;
 }
 
 img {
@@ -39,9 +72,17 @@ img {
 
 /* CONTAINER */
 .container {
-  max-width: 1100px;
+  max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+/* HEADER */
+
+.site-header {
+  padding-top: 73px;
+  padding-bottom: 73px;
+  background-color: var(--hero--bottom-section-bg);
 }
