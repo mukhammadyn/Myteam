@@ -233,7 +233,6 @@ img {
 
 .feature__title::before {
   position: absolute;
-  display: block;
   top: -54px;
   left: 0;
   content: "";
